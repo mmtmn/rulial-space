@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 from itertools import product
 import networkx as nx
 
@@ -57,3 +58,11 @@ def create_rulial_space_graph(turing_machines, steps):
     return rulial_space_graph
   
 rulial_space = create_rulial_space_graph(tm_list, 1)
+
+
+def visualize_rulial_space(graph):
+    pos = nx.spring_layout(graph)
+    nx.draw(graph, pos, node_size=50, with_labels=False, node_color="blue", font_size=8)
+    plt.show()
+
+visualize_rulial_space(rulial_space)
